@@ -1,0 +1,10 @@
+aws_region = "ap-south-1"
+project_name = "uber-clone"
+vpc_cidr = "10.0.0.0/16"
+availability_zones = ["ap-south-1a", "ap-south-1b", "ap-south-1c"]
+key_pair_name = "uber-clone-key"
+instance_type = "t3.micro"
+db_instance_class = "db.t3.micro"
+db_name = "uberclone"
+db_username = "admin"
+db_password = "SuperSecurePassword123!"
