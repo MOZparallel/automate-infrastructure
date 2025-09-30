@@ -1,37 +1,43 @@
-# Local .terraform directories
-.terraform/
-.terraform.d/
-.terraform.lock.hcl
-
 # Terraform state files
 *.tfstate
 *.tfstate.*
-*.tfstate.backup
-terraform.tfstate
-terraform.tfstate.backup
 
 # Crash logs
 crash.log
-crash.*.log
+crash.log.*
 
-# Override files (for local changes only)
-override.tf
-override.tf.json
-*_override.tf
-*_override.tf.json
-
-# Sensitive variable files
+# Terraform variable files containing sensitive data
 *.tfvars
 *.tfvars.json
 
-# Ignore SSH keys or private keys
-*.pem
-*.key
+# .terraform directories
+.terraform/
+.terraform.lock.hcl
 
-# IDE/editor specific
-.vscode/
-.idea/
+# Terraform plan output
+*.tfplan
+
+# Backup and override files
+*.backup
+*.override
+*.override.tf
+*.bak
+
+# IDE/editor specific files
 *.swp
 *.swo
-*.DS_Store
+*.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
 Thumbs.db
+
+# Keys or credentials
+keys/
+*.pem
+*.key
+*.csv
+
+# Screenshots folder (optional, if you want to ignore locally)
+# screenshots/
