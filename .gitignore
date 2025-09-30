@@ -1,10 +1,12 @@
 # Local .terraform directories
 .terraform/
+.terraform.d/
 .terraform.lock.hcl
 
 # Terraform state files
 *.tfstate
 *.tfstate.*
+*.tfstate.backup
 terraform.tfstate
 terraform.tfstate.backup
 
@@ -26,9 +28,6 @@ override.tf.json
 *.pem
 *.key
 
-# Ignore provider plugins (downloaded locally)
-.terraform.d/
-
 # IDE/editor specific
 .vscode/
 .idea/
@@ -36,4 +35,3 @@ override.tf.json
 *.swo
 *.DS_Store
 Thumbs.db
-
