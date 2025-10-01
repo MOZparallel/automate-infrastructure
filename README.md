@@ -1,64 +1,87 @@
-# Automate AWS Infrastructure using Terraform
+# 🚀 AWS Automated Infrastructure with Terraform
 
-![Terraform](https://img.shields.io/badge/Terraform-v1.6.0-blue?logo=terraform)
-![AWS Region](https://img.shields.io/badge/AWS-ap--south--1-orange?logo=amazon-aws)
-
----
-
-## Introduction
-This project demonstrates how to **automate AWS infrastructure deployment** using **Terraform**.  
-It is designed for **learning and hands-on practice** as an AWS Engineer project.  
-
-The project provisions the following resources:  
-
-- **VPC** with public and private subnets  
-- **EC2 Bastion Host** for secure SSH access  
-- **RDS MySQL Database** (Primary + Read Replica)  
-- **Application Load Balancer (ALB)** for traffic distribution  
-- **Security Groups** to control network access  
-
-The main goal is to provide a **fully automated, secure, and highly available AWS environment**.
+This project automates AWS infrastructure setup using Terraform.  
+It provisions VPC, EC2, RDS, Security Groups, and Load Balancer with reusable modules.
 
 ---
 
-## Architecture Diagram
-![Infrastructure](screenshots/infrastructure.png)
+## 📌 Project Overview
 
 ### VPC Overview
-![VPC Resource Map](screenshots/vpc resurce map.png)  
-![VPC Dashboard](screenshots/vpc dashboard.png)  
+- Custom VPC with public and private subnets
+- Internet Gateway and NAT Gateway for connectivity
+
+![VPC Resource Map](screenshots/vpc_resource_map.png)  
+![VPC Dashboard](screenshots/vpc_dashboard.png)
+
+---
 
 ### Database Setup
-- **Primary DB:** Main MySQL RDS instance  
-- **Read Replica:** Optional for read scaling and high availability  
+- **Primary DB**: MySQL RDS instance  
+- **Read Replica**: Optional for high availability & read scaling  
 
-![Database Subnet Group](screenshots/database subnet group.png)  
-![Primary Database](screenshots/database.png)  
-
----
-
-## Terraform Workflow
-
-| Step | Command | Screenshot |
-|------|---------|------------|
-| Initialize Terraform | `terraform init` | ![Terraform Init](screenshots/terraform.init.png) |
-| Validate Configuration | `terraform validate` | ![Terraform Validate](screenshots/terraform.validate.png) |
-| Plan Deployment | `terraform plan` | ![Terraform Plan](screenshots/terraform.plan.png) |
-| Apply Infrastructure | `terraform apply` | ![Terraform Apply](screenshots/terraform.apply.png) |
-| View Outputs | Terraform outputs | ![Terraform Outputs](screenshots/terraform.output.png) |
+![Database Subnet Group](screenshots/database_subnet_group.png)  
+![Primary Database](screenshots/database.png)
 
 ---
 
-## Terraform Outputs
+### Infrastructure Overview
+- Bastion Host (for SSH into private instances)  
+- Application Servers (Auto Scaling behind Load Balancer)  
+- RDS Database (Multi-AZ)  
 
-| Output Name | Description |
-|-------------|-------------|
-| `bastion_public_ip` | Public IP to SSH into Bastion Host |
-| `load_balancer_dns` | DNS to access the deployed application |
-| `rds_endpoint` | Primary RDS database endpoint |
-| `replica_endpoint` | Read Replica RDS endpoint |
-| `vpc_id` | VPC ID of the deployed network |
+![Infrastructure](screenshots/infrastructure.png)
 
 ---
 
-## Project Folder Structure
+## ⚙️ Terraform Workflow
+
+| Step                  | Command              | Screenshot                          |
+|-----------------------|----------------------|-------------------------------------|
+| Initialize Terraform  | `terraform init`     | ![Terraform Init](screenshots/terraform_init.png) |
+| Validate Configuration| `terraform validate` | ![Terraform Validate](screenshots/terraform_validate.png) |
+| Plan Deployment       | `terraform plan`     | ![Terraform Plan](screenshots/terraform_plan.png) |
+| Apply Infrastructure  | `terraform apply`    | ![Terraform Apply](screenshots/terraform_apply.png) |
+| View Outputs          | `terraform output`   | ![Terraform Output](screenshots/terraform_output.png) |
+
+---
+
+## 📤 Terraform Outputs
+
+| Output Name         | Description                                      |
+|---------------------|--------------------------------------------------|
+| `bastion_public_ip` | Public IP to SSH into Bastion Host                |
+| `load_balancer_dns` | DNS to access the deployed application            |
+| `rds_endpoint`      | Primary RDS database endpoint                     |
+
+---
+
+## 🛠️ Technologies Used
+- **Terraform** (Infrastructure as Code)
+- **AWS** (VPC, EC2, RDS, ALB, Security Groups)
+- **MySQL** (Database)
+- **GitHub** (Version Control)
+
+---
+
+## 🚀 Deployment Steps
+```bash
+# Clone repo
+git clone <your_repo_url>
+cd automate-infrastructure
+
+# Initialize Terraform
+terraform init
+
+# Validate configuration
+terraform validate
+
+# Plan the infra
+terraform plan
+
+# Apply the infra
+terraform apply -auto-approve
+
+# View outputs
+terraform output
+
