@@ -4,6 +4,14 @@ This project automates AWS infrastructure setup using Terraform.
 It provisions VPC, EC2, RDS, Security Groups, and Load Balancer with reusable modules.
 
 ---
+### Infrastructure Overview
+- Bastion Host (for SSH into private instances)  
+- Application Servers (Auto Scaling behind Load Balancer)  
+- RDS Database (Multi-AZ)  
+
+![Infrastructure](screenshots/infrastructure.png)
+
+---
 
 ## 📌 Project Overview
 
@@ -22,15 +30,6 @@ It provisions VPC, EC2, RDS, Security Groups, and Load Balancer with reusable mo
 
 ![Database Subnet Group](screenshots/database_subnet_group.png)  
 ![Primary Database](screenshots/database.png)
-
----
-
-### Infrastructure Overview
-- Bastion Host (for SSH into private instances)  
-- Application Servers (Auto Scaling behind Load Balancer)  
-- RDS Database (Multi-AZ)  
-
-![Infrastructure](screenshots/infrastructure.png)
 
 ---
 
