@@ -2,7 +2,7 @@
 *.tfstate
 *.tfstate.*
 
-# Crash logs
+# Terraform crash logs
 crash.log
 crash.log.*
 
@@ -10,7 +10,7 @@ crash.log.*
 *.tfvars
 *.tfvars.json
 
-# .terraform directories
+# Local Terraform directories (providers, plugins, etc.)
 .terraform/
 .terraform.lock.hcl
 
@@ -26,7 +26,7 @@ crash.log.*
 # IDE/editor specific files
 *.swp
 *.swo
-*.vscode/
+.vscode/
 .idea/
 
 # OS generated files
@@ -39,5 +39,5 @@ keys/
 *.key
 *.csv
 
-# Screenshots folder (optional, if you want to ignore locally)
+# Screenshots folder (optional, comment out if you want to track screenshots)
 # screenshots/
