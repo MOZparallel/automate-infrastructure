@@ -7,9 +7,13 @@ This project provisions **VPC, EC2, RDS, Security Groups, and Load Balancer** us
 
 ## 📌 Infrastructure Overview
 
-- **Bastion Host:** Secure SSH access to private instances  
-- **Application Servers:** Auto Scaling group behind a Load Balancer  
-- **RDS Database:** Multi-AZ deployment for high availability  
+Custom VPC with public and private subnets
+
+Internet Gateway for public access
+
+NAT Gateway for secure outbound traffic from private subnets
+
+Routing tables for traffic management
 
 ![Infrastructure Diagram](screenshots/infrastructure.png)
 
