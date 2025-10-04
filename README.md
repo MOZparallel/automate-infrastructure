@@ -110,28 +110,3 @@ terraform apply -auto-approve
 
 # View outputs
 terraform output
-
----
-
-## 🎯 Key Skills Demonstrated
-
-AWS Cloud Architecture → VPC, EC2, ALB, RDS
-
-Terraform IaC & Reusable Modules → Modular, scalable infrastructure
-
-High Availability & Fault Tolerance → Multi-AZ, Load Balancer
-
-Secure Access Management → Bastion Host, Private Subnets
-
-Version Control & Documentation → GitHub, professional project reportin
-
----
-
-## ✅ Why This Project Stands Out
-
-Professional portfolio-ready → Showcases cloud automation skills
-
-End-to-end cloud deployment → Networking, compute, database
-
-Hands-on DevOps skills → Terraform, AWS, MySQL, GitHub
-
