@@ -36,7 +36,8 @@ This project provisions **VPC, EC2, RDS, Security Groups, and Load Balancer** us
 - Application Load Balancer for traffic distribution  
 - Bastion host for secure SSH access  
 
-![ec2 dashboard](screenshots/ce2_dashboard.png)
+![EC2 Dashboard](screenshots/ec2_dashboard.png)
+
 ---
 
 ## ⚙️ Terraform Workflow
