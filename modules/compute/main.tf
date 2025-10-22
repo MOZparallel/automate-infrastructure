@@ -74,9 +74,7 @@ resource "aws_launch_template" "app" {
 
   vpc_security_group_ids = [var.app_security_group_id]
 
-  user_data = base64encode(templatefile("${path.module}/user_data.sh", {
-    project_name = var.project_name
-  }))
+  # user_data removed since script is deleted
 
   tag_specifications {
     resource_type = "instance"
@@ -92,10 +90,10 @@ resource "aws_launch_template" "app" {
 
 # Auto Scaling Group
 resource "aws_autoscaling_group" "app" {
-  name                = "${var.project_name}-app-asg"
-  vpc_zone_identifier = var.private_subnet_ids
-  target_group_arns   = [aws_lb_target_group.app.arn]
-  health_check_type   = "ELB"
+  name                     = "${var.project_name}-app-asg"
+  vpc_zone_identifier      = var.private_subnet_ids
+  target_group_arns        = [aws_lb_target_group.app.arn]
+  health_check_type        = "ELB"
   health_check_grace_period = 300
 
   min_size         = 1
@@ -132,7 +130,7 @@ resource "aws_instance" "bastion" {
   }
 }
 
-# Bastion Security Group (defined here since it's specific to compute)
+# Bastion Security Group
 resource "aws_security_group" "bastion" {
   name_prefix = "${var.project_name}-bastion-"
   vpc_id      = var.vpc_id
