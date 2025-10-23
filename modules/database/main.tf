@@ -73,25 +73,3 @@ resource "null_resource" "wait_primary_db" {
     EOT
   }
 }
-
-# ==========================
-# Read Replica (Commented out for first apply)
-# ==========================
-# resource "aws_db_instance" "replica" {
-#   identifier          = "${var.project_name}-replica-db"
-#   replicate_source_db = aws_db_instance.main.id
-#   instance_class      = var.db_instance_class
-#
-#   publicly_accessible = false
-#   skip_final_snapshot = true
-#
-#   depends_on = [null_resource.wait_primary_db]
-#
-#   lifecycle {
-#     create_before_destroy = true
-#   }
-#
-#   tags = {
-#     Name = "${var.project_name}-replica-db"
-#   }
-# }
