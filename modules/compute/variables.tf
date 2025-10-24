@@ -37,3 +37,21 @@ variable "instance_type" {
   description = "EC2 instance type"
   type        = string
 }
+
+variable "min_size" {
+  description = "Minimum number of instances"
+  type        = number
+  default     = 2
+}
+
+variable "max_size" {
+  description = "Maximum number of instances"
+  type        = number
+  default     = 10
+}
+
+variable "desired_capacity" {
+  description = "Desired number of instances"
+  type        = number
+  default     = 3
+}
