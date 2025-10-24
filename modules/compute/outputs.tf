@@ -1,14 +1,33 @@
 output "load_balancer_dns" {
-  description = "Load Balancer DNS name"
+  description = "DNS name of the load balancer"
   value       = aws_lb.main.dns_name
 }
 
+output "load_balancer_name" {
+  value = aws_lb.main.name
+}
+
+output "load_balancer_arn" {
+  description = "ARN of the load balancer"
+  value       = aws_lb.main.arn
+}
+
+output "target_group_arn" {
+  description = "ARN of the target group"
+  value       = aws_lb_target_group.web.arn
+}
+
+output "autoscaling_group_name" {
+  description = "Name of the Auto Scaling Group"
+  value       = aws_autoscaling_group.web.name
+}
+
 output "bastion_public_ip" {
-  description = "Bastion host public IP"
+  description = "Public IP of bastion host"
   value       = aws_instance.bastion.public_ip
 }
 
-output "auto_scaling_group_arn" {
-  description = "Auto Scaling Group ARN"
-  value       = aws_autoscaling_group.app.arn
+output "launch_template_id" {
+  description = "ID of the launch template"
+  value       = aws_launch_template.web.id
 }
