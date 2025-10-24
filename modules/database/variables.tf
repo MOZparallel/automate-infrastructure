@@ -1,4 +1,3 @@
-
 #string input that holds the name of your project
 variable "project_name" {
   description = "Name of the project"
