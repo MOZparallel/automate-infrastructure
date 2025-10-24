@@ -1,4 +1,4 @@
-# Data source for AMI
+# fetching the latest Amazon Linux 2 AMI (Amazon Machine Image) from AWS to use for EC2 instances.
 data "aws_ami" "amazon_linux" {
   most_recent = true
   owners      = ["amazon"]
@@ -14,7 +14,7 @@ data "aws_ami" "amazon_linux" {
   }
 }
 
-# Application Load Balancer
+# creates an Application Load Balancer in AWS
 resource "aws_lb" "main" {
   name               = "${var.project_name}-alb"
   internal           = false
@@ -29,7 +29,7 @@ resource "aws_lb" "main" {
   }
 }
 
-# ALB Target Group
+# creates an Application Load Balancer Target Group
 resource "aws_lb_target_group" "app" {
   name     = "${var.project_name}-app-tg"
   port     = 8080
@@ -53,7 +53,7 @@ resource "aws_lb_target_group" "app" {
   }
 }
 
-# ALB Listener
+# creates an ALB Listener
 resource "aws_lb_listener" "app" {
   load_balancer_arn = aws_lb.main.arn
   port              = "80"
@@ -65,7 +65,7 @@ resource "aws_lb_listener" "app" {
   }
 }
 
-# Launch Template
+# creates an AWS Launch Template
 resource "aws_launch_template" "app" {
   name_prefix   = "${var.project_name}-app-"
   image_id      = data.aws_ami.amazon_linux.id
@@ -75,6 +75,7 @@ resource "aws_launch_template" "app" {
   vpc_security_group_ids = [var.app_security_group_id]
 
   # user_data removed since script is deleted
+  #Before deleting the old resource, create the new one first
 
   tag_specifications {
     resource_type = "instance"
