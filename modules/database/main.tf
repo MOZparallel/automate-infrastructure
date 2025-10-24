@@ -1,12 +1,8 @@
-# ==========================
-# Database Module - main.tf
-# ==========================
-
-# DB Subnet Group
+# DB Subnet Group(group of subnets where my database can run)
 resource "aws_db_subnet_group" "main" {
   name       = "${var.project_name}-db-subnet-group"
   subnet_ids = var.database_subnet_ids
-
+]
   tags = {
     Name = "${var.project_name}-db-subnet-group"
   }
